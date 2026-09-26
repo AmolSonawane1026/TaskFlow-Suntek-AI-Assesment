@@ -7,7 +7,6 @@ import { fetchDailySummary, fetchWeeklySummary } from '@/store/slices/summarySli
 import { fetchActiveTimer } from '@/store/slices/timelogSlice';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import Navbar from '@/components/layout/Navbar';
-import ActiveTimer from '@/components/timer/ActiveTimer';
 import TaskCard from '@/components/tasks/TaskCard';
 import CreateTaskModal from '@/components/tasks/CreateTaskModal';
 import toast from 'react-hot-toast';
@@ -84,7 +83,7 @@ export default function TasksPage() {
       <div className="min-h-screen bg-gray-50/50">
         <Navbar />
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${activeTimer ? 'pt-14 sm:pt-16 pb-8' : 'py-8'}`}>
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
@@ -101,13 +100,6 @@ export default function TasksPage() {
               New Task Modal
             </button>
           </div>
-
-          {/* Active Timer */}
-          {activeTimer && (
-            <div className="mb-6">
-              <ActiveTimer />
-            </div>
-          )}
 
           {/* Natural Language AI Quick Task Creator */}
           <div className="bg-orange-500 rounded-3xl p-5 sm:p-6 mb-6 text-white shadow-lg shadow-orange-100">
