@@ -7,7 +7,6 @@ import { fetchTasks } from '@/store/slices/taskSlice';
 import { fetchActiveTimer } from '@/store/slices/timelogSlice';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import Navbar from '@/components/layout/Navbar';
-import ActiveTimer from '@/components/timer/ActiveTimer';
 import CreateTaskModal from '@/components/tasks/CreateTaskModal';
 import TaskCard from '@/components/tasks/TaskCard';
 import { formatTime } from '@/utils/helpers';
@@ -264,13 +263,6 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
-
-          {/* Active Timer */}
-          {activeTimer && (
-            <div className="mb-8">
-              <ActiveTimer />
-            </div>
-          )}
 
           {/* Summary Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

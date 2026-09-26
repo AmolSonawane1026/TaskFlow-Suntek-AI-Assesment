@@ -6,7 +6,6 @@ import { fetchTimeLogs } from '@/store/slices/timelogSlice';
 import { fetchActiveTimer } from '@/store/slices/timelogSlice';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import Navbar from '@/components/layout/Navbar';
-import ActiveTimer from '@/components/timer/ActiveTimer';
 import { formatTime, formatDateTime } from '@/utils/helpers';
 import { Timer, Clock, Radio, CheckCircle2, History } from 'lucide-react';
 
@@ -32,13 +31,6 @@ export default function TimeLogsPage() {
               Review all your recorded productivity sessions and time tracking history
             </p>
           </div>
-
-          {/* Active Timer */}
-          {activeTimer && (
-            <div className="mb-6">
-              <ActiveTimer />
-            </div>
-          )}
 
           {/* Time Logs Table */}
           {isLoading && timeLogs.length === 0 ? (

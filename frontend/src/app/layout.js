@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/store/provider";
 import { Toaster } from "react-hot-toast";
+import ActiveTimer from "@/components/timer/ActiveTimer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
               },
             }}
           />
+          <ActiveTimer />
           {children}
         </ReduxProvider>
       </body>
