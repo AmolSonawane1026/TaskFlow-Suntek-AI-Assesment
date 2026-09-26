@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange-50: #fdf2f4;
+  --color-orange-100: #fce7eb;
+  --color-orange-200: #fad0d8;
+  --color-orange-300: #f6a9b9;
+  --color-orange-400: #ef708c;
+  --color-orange-500: #E11A45;
+  --color-orange-600: #c91139;
+  --color-orange-700: #a70c2f;
+  --color-orange-800: #8b0d2a;
+  --color-orange-900: #760f27;
+  --color-orange-950: #420412;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  button,
+  [role="button"],
+  select,
+  a {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role="button"]:disabled,
+  select:disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.2s ease-out;
+  }
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #fad0d8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E11A45;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
